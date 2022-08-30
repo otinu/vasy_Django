@@ -35,7 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vasyApp'   # 手動で追記 
+
+    # 手動で追記===============
+
+    'vasyApp' ,
+    'rest_framework',
+    'products'
 ]
 
 MIDDLEWARE = [
