@@ -21,5 +21,6 @@ from django.urls import include
 # path関数でvasyApp内のurls.pyを読み込むために、include関数を記述
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('vasyApp/', include('vasyApp.urls')),    # アプリケーション管理フォルダのurls.pyと関連づけるpath
+    path('', include('vasyApp.urls')),    # アプリケーション管理フォルダのurls.pyと関連づけるpath
+    path('products/', include('products.urls')),
 ]
