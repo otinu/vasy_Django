@@ -14,9 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-# Include関数をインポート
-from django.urls import include
+from django.urls import path, include
 
 # path関数でvasyApp内のurls.pyを読み込むために、include関数を記述
 urlpatterns = [
