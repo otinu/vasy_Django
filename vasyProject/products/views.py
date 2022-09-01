@@ -15,4 +15,4 @@ class NonModel_ApiView(APIView):
 
     def get(self, request, format=None):
         # ダミーデータを返却
-        return Response({"name": "This hasn't Model!"})
+        return Response({"APIより": "vasyProjectのviewsからやってきました！！"})
