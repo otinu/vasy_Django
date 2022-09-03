@@ -1,16 +1,13 @@
-"""
+
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Product
 from .serializers import ProductSerializer
-"""
-import scraping.cookpad as cookpad
-import scraping.kurashiru as kurashiru
 
-print(cookpad.read())
-print(kurashiru.read())
-"""
+import products.scraping.cookpad as cookpad
+import products.scraping.kurashiru as kurashiru
+
 class ProductViewSet(viewsets.ModelViewSet):
 
     queryset = Product.objects.all()
@@ -23,6 +20,4 @@ class NonModel_ApiView(APIView):
         # ダミーデータを返却
         
         # return  Response({"APIより": "vasyProjectのviewsからやってきました！！"})
-        return Response(cookpad.read())
-
-"""
+        return Response(kurashiru.read())

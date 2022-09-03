@@ -27,6 +27,7 @@ def read():
                     "title": title,
                     "link": link,
                     "image": image, 
+                    "count": count
                 }
                 posted_data[count] = add_data
                 count += 1
@@ -35,4 +36,4 @@ def read():
         except Exception as e:
             continue
 
-    return(json.dumps(posted_data))
+    return posted_data

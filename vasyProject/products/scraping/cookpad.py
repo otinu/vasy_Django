@@ -10,6 +10,8 @@ def read():
     titles = soup.select("html > body > div > div > div > div > div > div > section > main > section > ul > li > div > div > div > h2")
     links_images = soup.select("html >body >div >div >div >div >div >div >section >main >section >ul >li")
 
+    # この形だと、2次元構造になっている
+
     posted_data = {}
     count = 0
     for (title, link_image) in zip(titles, links_images):
@@ -23,6 +25,7 @@ def read():
                     "title": title,
                     "link": URL_PATTERN + link,
                     "image": image, 
+                    "count": count
                 }
                 posted_data[count] = add_data
                 count += 1
@@ -31,4 +34,29 @@ def read():
         except Exception as e:
             continue
 
+    return posted_data
+
+""" この形だと縦に出力された
+    posted_data = []
+    for (title, link_image) in zip(titles, links_images):
+        try:
+            title = title.a.text
+            link = link_image.a['href']
+            image = link_image.img['src']
+
+            if title is not None and link is not None and image is not None:
+                add_data = {
+                    "title": title,
+                    "link": URL_PATTERN + link,
+                    "image": image, 
+                }
+                posted_data.append(add_data)
+            else:
+                raise(Exception)
+        except Exception as e:
+            continue
+
     return json.dumps(posted_data)
+
+"""
+
