@@ -8,7 +8,7 @@ html_doc = requests.get("https://www.kurashiru.com/search?query=%E3%81%98%E3%82%
 soup = BeautifulSoup(html_doc, 'html.parser')
 
 # imgタグのalt値からタイトルも取得
-titles_images = soup.select("html > body > div > section > div > div > div > div > div > ul > li > div > a > div")
+titles_images = soup.select("html > body > div > section > div > div > div > div > div > ul > li > div > a > div > div > noscript")
 links = soup.select("html > body > div > section > div > div > div > div > div > ul > li > div")
 
 """
