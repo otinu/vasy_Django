@@ -10,13 +10,13 @@
       <h3 class="col-4 mb-5 d-none d-lg-block">🍴じゃがいも🍴</h3>
     </div>
     <div class="row g-2">
-      <div v-for="data in datas" :key="data">
-        <div v-if="data.count < 3">
+
+      <template v-for="data in datas" :key="data">
+        <template v-if="data.count < 3">
           <div class="col-md-4 col-sm-12">
             <div v-ripple="'rgba(34, 139, 34, 0.2)'">
-              <img :src="data.image" alt="レシピ画像" />
+              <img :src="data.image" width="200" height="296" alt="レシピ画像" />
             </div>
-            <!-- v-ripple -->
             <a
               class="recipe-title text-success"
               style="text-decoration: none"
@@ -26,16 +26,13 @@
               >{{ data.title }}</a
             >
           </div>
-          <!-- block  -->
-        </div>
-        <!-- v-if -->
+        </template>
 
-        <div v-if="data.count >= 3">
+        <template v-if="data.count >= 3">
           <div class="col-md-4 col-sm-12 mt-5">
             <div v-ripple="'rgba(34, 139, 34, 0.2)'">
-              <img :src="data.image" alt="レシピ画像" />
+              <img :src="data.image" width="200" height="296" alt="レシピ画像" />
             </div>
-            <!-- v-ripple -->
             <a
               class="recipe-title text-success"
               style="text-decoration: none"
@@ -45,11 +42,8 @@
               >{{ data.title }}</a
             >
           </div>
-          <!-- block  -->
-        </div>
-        <!-- v-if -->
-      </div>
-      <!-- v-for -->
+        </template>
+      </template>
     </div>
   </div>
 </template>
@@ -61,7 +55,7 @@ export default {
   name: "IndexPage",
   data: () => ({
     open: false,
-    datas: [],
+    datas: []
   }),
   mounted() {
     axios
