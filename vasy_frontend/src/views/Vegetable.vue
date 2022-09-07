@@ -56,7 +56,7 @@ export default {
   }),
   mounted() {
     axios
-      .get("/products/non_model/")
+      .get("/products/kurashiru/")
       //.then((response) => (this.message = response.data))
       .then((response) => {
         this.datas = response.data;

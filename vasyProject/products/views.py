@@ -14,10 +14,9 @@ class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
 
 
-class NonModel_ApiView(APIView):
+class Kurashiru_ApiView(APIView):
 
     def get(self, request, format=None):
         # ダミーデータを返却
         
-        # return  Response({"APIより": "vasyProjectのviewsからやってきました！！"})
         return Response(kurashiru.read())
