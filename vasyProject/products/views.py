@@ -17,6 +17,4 @@ class ProductViewSet(viewsets.ModelViewSet):
 class Kurashiru_ApiView(APIView):
 
     def get(self, request, format=None):
-        # ダミーデータを返却
-        
-        return Response(kurashiru.read())
+        return Response(kurashiru.Allread())

@@ -2,10 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
-def read():
+def Allread():
 
     URL_PATTERN = "https://www.kurashiru.com"
-
 
     html_doc = requests.get("https://www.kurashiru.com/search?query=%E3%81%98%E3%82%83%E3%81%8C%E3%81%84%E3%82%82").text
     soup = BeautifulSoup(html_doc, 'html.parser')
