@@ -92,29 +92,17 @@ export default {
     third_datas: {},
   }),
   mounted() {
-    /*
-    axios
-      .get("/products/kurashiru/", {
-        params: {
-          limit: 2,
-        },
-      })
-      .then((response) => {
-        this.second_datas = response.data;
-      })
-      .catch((error) => console.log(error));
-  },
-  */
     axios
       .get("/products/kurashiru/")
       .then((response) => {
-        for (var data in response.data) {
+        for (var data in response.data[0]) {
           if (data == 0) {
-            this.first_data = response.data[data];
+            this.first_data = response.data[0][data];
+            console.log(this.first_data)
           } else if (data < 5) {
-            this.second_datas[data] = response.data[data];
+            this.second_datas[data] = response.data[0][data];
           } else if (data < 9) {
-            this.third_datas[data] = response.data[data];
+            this.third_datas[data] = response.data[0][data];
           }
         }
       })
