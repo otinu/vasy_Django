@@ -7,6 +7,7 @@ from .serializers import ProductSerializer
 
 import products.scraping.cookpad as cookpad
 import products.scraping.kurashiru as kurashiru
+import products.scraping.cookpad as cookpad
 
 class ProductViewSet(viewsets.ModelViewSet):
 
@@ -18,3 +19,8 @@ class Kurashiru_ApiView(APIView):
 
     def get(self, request, format=None):
         return Response(kurashiru.Allread())
+
+class Cookpad_ApiView(APIView):
+
+    def get(self, request, format=None):
+        return Response(cookpad.Allread())

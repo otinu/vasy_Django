@@ -23,7 +23,7 @@ def scraping(keyword):
     titles_images = soup.select("html > body > div > section > div > div > div > div > div > ul > li > div > a > div > div > noscript")
     links = soup.select("html > body > div > section > div > div > div > div > div > ul > li > div")
 
-    datas = {}
+    posted_datas = {}
     count = 0
     for (title_image, link) in zip(titles_images, links):
         try:
@@ -38,11 +38,11 @@ def scraping(keyword):
                     "image": image, 
                     "count": count
                 }
-                datas[count] = add_data
+                posted_datas[count] = add_data
                 count += 1
             else:
                 raise(Exception)
         except Exception as e:
             continue
 
-    return datas
+    return posted_datas
