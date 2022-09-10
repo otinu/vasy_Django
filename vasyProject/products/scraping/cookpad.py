@@ -21,7 +21,6 @@ def scraping(keyword):
     soup = BeautifulSoup(html_doc, 'html.parser')
     titles = soup.select("html > body > div > div > div > div > div > div > section > main > section > ul > li > div > div > div > h2")
     links_images = soup.select("html >body >div >div >div >div >div >div >section >main >section >ul >li")
-
     posted_datas = {}
     count = 0
     for (title, link_image) in zip(titles, links_images):
