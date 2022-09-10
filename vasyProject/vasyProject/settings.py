@@ -38,8 +38,7 @@ INSTALLED_APPS = [
 
     # 手動で追記===============
 
-    'vasyApp' ,
-    'rest_framework',
+    # 'vasyApp' ⇒ アプリ内で使用していませんが、復習用としてディレクトリは残しています
     'products'
 ]
 

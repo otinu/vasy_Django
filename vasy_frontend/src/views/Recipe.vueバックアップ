@@ -1,0 +1,35 @@
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+  </div>
+
+  <div id="axios-test">
+    <ul>
+      <li v-for="link in links" :key="link">{{ link.link }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "AxiosTestPage",
+  el: "#axios-test",
+  data() {
+    return {
+      message: "Hay axios",
+      links: []
+    };
+  },
+  mounted() {
+    axios
+      .get("/products/non_model/")
+      //.then((response) => (this.message = response.data))
+      .then((response) => {
+        this.links = response.data;
+      })
+      .catch((error) => console.log(error));
+  },
+};
+</script>
